@@ -1,5 +1,194 @@
-<div class="bg-footer">
-    <div class="h-[90px] bg-white">hedlsdnfl</div>
-    <div class="h-[400px] bg-white">hedlsdnfl</div>
-    <div class="h-[90px] bg-white">hedlsdnfl</div>
+---
+const categories = [
+    "Cricket",
+    "IPL",
+    "News",
+    "Players",
+    "Predictions",
+    "Football",
+    "Records",
+    "Game",
+];
+
+const importantLinks = ["Contact Us", "About Us", "Advertise With Us"];
+
+const popularPlayers = [
+    "Abhishek Sharma",
+    "Virat Kohli",
+    "Rohit Sharma",
+    "Rashid Khan",
+    "Smriti Mandhana",
+];
+
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Term & Conditions", href: "/terms" },
+    { name: "DMCA", href: "/dmca" },
+    { name: "Disclaimer", href: "/disclaimer" },
+];
+---
+
+<div class="flex flex-col bg-footer overflow-x-hidden">
+    <!-- first section -->
+    <div
+        class="h-[90px] w-full max-w-[1140px] mx-auto px-4 flex items-center justify-center md:justify-start"
+    >
+        <a
+            href="/"
+            class="text-base text-white font-black tracking-tighter uppercase"
+        >
+            iGAMING KEEDA
+        </a>
+    </div>
+
+    <!-- second section -->
+    <div
+        class="w-full max-w-[1140px] mx-auto px-4 lg:px-0 text-white py-8 border-t-2 border-white flex flex-col justify-between"
+    >
+        <!-- grid section -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <!-- Categories -->
+            <div>
+                <h3 class="font-bold text-lg mb-6 tracking-wide">Categories</h3>
+                <ul class="space-y-2 font-semibold text-sm opacity-80">
+                    {
+                        categories.map((item) => (
+                            <li>
+                                <a
+                                    href="#"
+                                    class="hover:text-[#EA2222] transition-colors"
+                                >
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Important Links -->
+            <div>
+                <h3 class="font-bold text-lg mb-6 tracking-wide">
+                    Important Link
+                </h3>
+                <ul class="space-y-2 font-semibold text-sm opacity-80">
+                    {
+                        importantLinks.map((item) => (
+                            <li>
+                                <a
+                                    href="#"
+                                    class="hover:text-[#EA2222] transition-colors"
+                                >
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Popular Players -->
+            <div>
+                <h3 class="font-bold text-lg mb-6 tracking-wide">
+                    Popular Players
+                </h3>
+                <ul class="space-y-2 font-semibold text-sm opacity-80">
+                    {
+                        popularPlayers.map((item) => (
+                            <li>
+                                <a
+                                    href="#"
+                                    class="hover:text-[#EA2222] transition-colors"
+                                >
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+
+            <!-- Subscribe -->
+            <div class="lg:col-span-2">
+                <div class="mb-6">
+                    <span class="font-bold">Email:</span>{" "}
+                    <a
+                        href="mailto:Contact@igamingkeeda.com"
+                        class="text-sm opacity-80 hover:text-[#EA2222]"
+                    >
+                        Contact@igamingkeeda.com
+                    </a>
+                </div>
+
+                <p class="text-sm font-medium mb-6">
+                    Stay Updated with our latest News
+                </p>
+
+                <form class="space-y-3">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="w-full px-3 py-2 rounded text-black outline-none focus:ring-2 focus:ring-[#EA2222]"
+                    />
+                    <button
+                        type="submit"
+                        class="w-full bg-[#EA2222] hover:bg-red-700 text-white font-bold py-2 rounded"
+                    >
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- description -->
+        <div class="mt-10 pt-8 border-t-2 border-white">
+            <p
+                class="text-center text-xs md:text-sm leading-relaxed opacity-70 max-w-4xl mx-auto italic"
+            >
+                Your Go-To Source for the Latest in the Gaming Industry! Stay
+                updated with news, trends, game reviews, insights, and expert
+                analysis on all things Gaming.
+            </p>
+        </div>
+    </div>
+
+    <!-- last section -->
+    <div
+        class="w-full max-w-[1140px] mx-auto px-4 border-t-2 border-white py-6 md:h-[90px] flex items-center"
+    >
+        <div
+            class="w-full flex flex-col md:flex-row items-center justify-between gap-4 text-white"
+        >
+            <!-- links -->
+            <nav
+                class="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1 text-[13px] md:text-[14px]"
+            >
+                {
+                    footerLinks.map((link, index) => (
+                        <>
+                            <a
+                                href={link.href}
+                                class="hover:text-[#EA2222] transition-colors whitespace-nowrap"
+                            >
+                                {link.name}
+                            </a>
+                            {index < footerLinks.length - 1 && (
+                                <span class="text-white font-bold">|</span>
+                            )}
+                        </>
+                    ))
+                }
+            </nav>
+
+            <!-- copyright -->
+            <div
+                class="text-[13px] md:text-[14px] text-white/90 font-medium tracking-tight text-center md:text-right"
+            >
+                Copyright © {currentYear}
+                <span class="font-bold">iGamingKeeda</span>
+            </div>
+        </div>
+    </div>
 </div>
