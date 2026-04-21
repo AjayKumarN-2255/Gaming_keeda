@@ -165,11 +165,73 @@ function renderBlocks(blocks) {
 
 const data = [
     {
-        "__typename": "CoreParagraph",
-        "renderedHtml": "\n<p class=\"has-x-large-font-size\">fsdfsdafa<mark style=\"background-color:rgba(0, 0, 0, 0);color:#ea2222\" class=\"has-inline-color\">sdfsdfasd</mark></p>\n",
+        "__typename": "CoreColumns",
         "attributes": {
-            "fontSize": "x-large",
-            "content": "fsdfsdafa<mark style=\"background-color:rgba(0, 0, 0, 0);color:#ea2222\" class=\"has-inline-color\">sdfsdfasd</mark>",
+            "className": "test_classes",
+            "layout": null
+        },
+        "innerBlocks": [
+            {
+                "__typename": "CoreColumn",
+                "attributes": {
+                    "className": null,
+                    "width": null
+                },
+                "innerBlocks": [
+                    {
+                        "__typename": "CoreParagraph",
+                        "attributes": {
+                            "fontSize": null,
+                            "content": "jgfjghjfgjfg",
+                            "className": null,
+                            "textColor": null,
+                            "backgroundColor": null
+                        }
+                    }
+                ]
+            },
+            {
+                "__typename": "CoreColumn",
+                "attributes": {
+                    "className": null,
+                    "width": null
+                },
+                "innerBlocks": [
+                    {
+                        "__typename": "CoreParagraph",
+                        "attributes": {
+                            "fontSize": null,
+                            "content": "gjfhjfghjghjgjghj",
+                            "className": null,
+                            "textColor": null,
+                            "backgroundColor": null
+                        }
+                    }
+                ]
+            },
+            {
+                "__typename": "CoreColumn",
+                "attributes": {
+                    "className": null,
+                    "width": null
+                },
+                "innerBlocks": [
+                    {
+                        "__typename": "CoreColumns",
+                        "attributes": {
+                            "className": null,
+                            "layout": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "__typename": "CoreParagraph",
+        "attributes": {
+            "fontSize": null,
+            "content": "",
             "className": null,
             "textColor": null,
             "backgroundColor": null
