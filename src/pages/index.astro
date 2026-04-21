@@ -3,5 +3,22 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>testing</h1>
+	<div class="wp-block-columns">
+  
+  <div class="wp-block-column">
+    <h2 class="wp-block-heading">Left Column</h2>
+    <p class="wp-block-paragraph">
+      This is some content inside the first column. It will stack on mobile.
+    </p>
+    <img class="wp-block-image" src="https://via.placeholder.com/600" />
+  </div>
+
+  <div class="wp-block-column">
+    <h2 class="wp-block-heading">Right Column</h2>
+    <p class="wp-block-paragraph">
+      Second column content goes here. On mobile it appears below first column.
+    </p>
+  </div>
+
+</div>
 </Layout>

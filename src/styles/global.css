@@ -1,5 +1,5 @@
 @import "./fontsize.css";
-/* @import "./block.css"; */
+@import "./block.css";
 
 
 @tailwind base;

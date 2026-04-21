@@ -1,0 +1,47 @@
+.wp-block-group,
+.wp-block-columns,
+.wp-block-column,
+.wp-block-cover,
+.wp-block-list,
+.wp-block-list-ordered,
+.wp-block-paragraph,
+.wp-block-heading,
+.wp-block-quote,
+.wp-block-image,
+.wp-block-embed,
+.wp-block-button,
+.wp-block-separator,
+.wp-block-preformatted,
+.wp-block-code {
+    box-sizing: border-box;
+}
+
+@layer base {
+    .wp-block-heading {
+        @apply mb-2;
+    }
+
+    .wp-block-paragraph {
+        @apply mb-[5px];
+    }
+
+    .wp-block-image {
+        @apply mb-6;
+    }
+
+    .wp-block-image img {
+        @apply w-full h-auto;
+    }
+
+    .wp-block-columns {
+        @apply flex flex-col md:flex-row gap-6;
+    }
+
+    .wp-block-column {
+        @apply flex-1 min-w-0;
+    }
+
+    .wp-block-group {
+        @apply w-full;
+    }
+}
