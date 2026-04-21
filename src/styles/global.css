@@ -1,0 +1,7 @@
+@import "./fontsize.css";
+/* @import "./block.css"; */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -8,7 +8,7 @@ function renderBlock(block) {
     const extraClass = block.attributes?.className || "";
 
     const buildClass = (...classes) =>
-        classes.filter(Boolean).join(" ");
+        classes.filter(Boolean).join(" ").trim();
 
     // ---------------- TEXT ----------------
 
@@ -162,3 +162,19 @@ function renderBlocks(blocks) {
     if (!blocks) return "";
     return blocks.map(renderBlock).join("");
 }
+
+const data = [
+    {
+        "__typename": "CoreParagraph",
+        "renderedHtml": "\n<p class=\"has-x-large-font-size\">fsdfsdafa<mark style=\"background-color:rgba(0, 0, 0, 0);color:#ea2222\" class=\"has-inline-color\">sdfsdfasd</mark></p>\n",
+        "attributes": {
+            "fontSize": "x-large",
+            "content": "fsdfsdafa<mark style=\"background-color:rgba(0, 0, 0, 0);color:#ea2222\" class=\"has-inline-color\">sdfsdfasd</mark>",
+            "className": null,
+            "textColor": null,
+            "backgroundColor": null
+        },
+        "innerBlocks": []
+    }]
+
+console.log(renderBlocks(data));

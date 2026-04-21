@@ -1,0 +1,87 @@
+@layer base {
+
+    /* -------- Paragraph -------- */
+    p {
+        @apply text-xs;
+    }
+
+    @screen md {
+        p {
+            @apply text-sm;
+        }
+    }
+
+    @screen lg {
+        p {
+            @apply text-[14px];
+        }
+    }
+
+    /* -------- H5 -------- */
+    h5 {
+        @apply text-base;
+    }
+
+    @screen md {
+        h5 {
+            @apply text-lg;
+        }
+    }
+
+    @screen lg {
+        h5 {
+            @apply text-[18px];
+        }
+    }
+
+    /* -------- H3 -------- */
+    h3 {
+        @apply text-base;
+    }
+
+    @screen md {
+        h3 {
+            @apply text-lg;
+        }
+    }
+
+    @screen lg {
+        h3 {
+            @apply text-[22px];
+        }
+    }
+
+    /* -------- H2 -------- */
+    h2 {
+        @apply text-lg;
+    }
+
+    @screen md {
+        h2 {
+            @apply text-xl;
+        }
+    }
+
+    @screen lg {
+        h2 {
+            @apply text-[26px];
+        }
+    }
+
+    /* -------- H1 -------- */
+    h1 {
+        @apply text-xl;
+    }
+
+    @screen md {
+        h1 {
+            @apply text-2xl;
+        }
+    }
+
+    @screen lg {
+        h1 {
+            @apply text-[32px];
+        }
+    }
+}
