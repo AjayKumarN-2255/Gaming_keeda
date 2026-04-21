@@ -1,0 +1,106 @@
+---
+const navItems = [
+    { name: "CRICKET", href: "/cricket" },
+    { name: "IPL", href: "/ipl" },
+    { name: "WPL", href: "/wpl" },
+    { name: "NEWS", href: "/news" },
+    { name: "PLAYERS", href: "/players" },
+    { name: "GAMING", href: "/gaming" },
+    { name: "PREDICTIONS", href: "/predictions" },
+];
+---
+
+<header class="w-full h-[75px] bg-white border-b border-gray-100">
+    <div class="max-w-[1150px] mx-auto px-4 h-full flex items-center">
+        <!-- Left: Logo -->
+        <a href="/" class="flex items-center flex-shrink-0">
+            <img src="/logo.png" alt="iGaming Keeda" class="h-5 w-auto" />
+        </a>
+
+        <!-- Center: Nav -->
+        <nav class="hidden lg:flex flex-1 justify-center items-center gap-8">
+            {
+                navItems.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-sm font-bold text-gray-900 hover:text-[#EA2222] transition-colors"
+                    >
+                        {item.name}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <!-- Right: Search -->
+        <div class="hidden lg:flex flex-shrink-0">
+            <button
+                class="bg-black text-white p-2 rounded-full hover:bg-[#EA2222] transition-colors"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="3"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Button -->
+        <button id="menu-toggle" class="lg:hidden ml-auto text-gray-900">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Menu (unchanged) -->
+    <div
+        id="mobile-menu"
+        class="hidden lg:hidden absolute left-0 w-full bg-white border-t border-gray-100 shadow-xl"
+    >
+        <div class="flex flex-col p-4 space-y-4">
+            {
+                navItems.map((item) => (
+                    <a
+                        href={item.href}
+                        class="text-sm font-bold text-gray-900 border-b border-gray-100 pb-2"
+                    >
+                        {item.name}
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</header>
+
+<script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+
+    mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+</script>
