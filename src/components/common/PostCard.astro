@@ -1,0 +1,30 @@
+---
+const { title, date, image, url } = Astro.props;
+---
+
+<div class="bg-secondary w-full flex flex-col rounded-lg p-[10px] md:h-[280px] shadow-md">
+    <a
+        href={url}
+        class="group block relative w-full overflow-hidden flex-shrink-0"
+    >
+        <img
+            src={image}
+            alt={title}
+            class="w-full h-[160px] object-cover"
+        />
+    </a>
+
+    <div class="flex flex-col pt-3">
+        <div class="flex flex-col gap-1 text-white ">
+            <a
+                href={url}
+                class="text-[15.5px] font-bold leading-[1.3] cursor-pointer"
+            >
+                {title}
+            </a>
+            <span>
+                {date}
+            </span>
+        </div>
+    </div>
+</div>

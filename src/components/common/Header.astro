@@ -1,13 +1,6 @@
 ---
-const navItems = [
-    { name: "CRICKET", href: "/cricket" },
-    { name: "IPL", href: "/ipl" },
-    { name: "WPL", href: "/wpl" },
-    { name: "NEWS", href: "/news" },
-    { name: "PLAYERS", href: "/players" },
-    { name: "GAMING", href: "/gaming" },
-    { name: "PREDICTIONS", href: "/predictions" },
-];
+const { fetchNavMenu } = await import("../../lib/queries/getNavMenus.js");
+const navItems = await fetchNavMenu("primary");
 ---
 
 <header class="w-full h-[75px] bg-white border-b border-gray-100">
@@ -20,12 +13,12 @@ const navItems = [
         <!-- Center: Nav -->
         <nav class="hidden lg:flex flex-1 justify-center items-center gap-8">
             {
-                navItems.map((item) => (
+                navItems.map((item:any) => (
                     <a
-                        href={item.href}
+                        href={item.path}
                         class="text-sm font-bold text-gray-900 hover:text-[#EA2222] transition-colors"
                     >
-                        {item.name}
+                        {item.label}
                     </a>
                 ))
             }
@@ -77,12 +70,12 @@ const navItems = [
     >
         <div class="flex flex-col p-4 space-y-4">
             {
-                navItems.map((item) => (
+                navItems.map((item:any) => (
                     <a
-                        href={item.href}
+                        href={item.path}
                         class="text-sm font-bold text-gray-900 border-b border-gray-100 pb-2"
                     >
-                        {item.name}
+                        {item.label}
                     </a>
                 ))
             }

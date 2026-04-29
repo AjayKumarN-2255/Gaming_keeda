@@ -150,6 +150,13 @@ function renderBlock(block) {
             return `<div style="height:${height}px"></div>`;
         }
 
+        // ---------------- CORE TABLE -----------------
+
+        case "CoreTable": {
+            const html = block.renderedHtml || "";
+            return html;
+        }
+
         // ---------------- DEFAULT ----------------
 
         default:
@@ -165,78 +172,13 @@ function renderBlocks(blocks) {
 
 const data = [
     {
-        "__typename": "CoreColumns",
+        "__typename": "CoreTable",
         "attributes": {
-            "className": "test_classes",
-            "layout": null
-        },
-        "innerBlocks": [
-            {
-                "__typename": "CoreColumn",
-                "attributes": {
-                    "className": null,
-                    "width": null
-                },
-                "innerBlocks": [
-                    {
-                        "__typename": "CoreParagraph",
-                        "attributes": {
-                            "fontSize": null,
-                            "content": "jgfjghjfgjfg",
-                            "className": null,
-                            "textColor": null,
-                            "backgroundColor": null
-                        }
-                    }
-                ]
-            },
-            {
-                "__typename": "CoreColumn",
-                "attributes": {
-                    "className": null,
-                    "width": null
-                },
-                "innerBlocks": [
-                    {
-                        "__typename": "CoreParagraph",
-                        "attributes": {
-                            "fontSize": null,
-                            "content": "gjfhjfghjghjgjghj",
-                            "className": null,
-                            "textColor": null,
-                            "backgroundColor": null
-                        }
-                    }
-                ]
-            },
-            {
-                "__typename": "CoreColumn",
-                "attributes": {
-                    "className": null,
-                    "width": null
-                },
-                "innerBlocks": [
-                    {
-                        "__typename": "CoreColumns",
-                        "attributes": {
-                            "className": null,
-                            "layout": null
-                        }
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "__typename": "CoreParagraph",
-        "attributes": {
-            "fontSize": null,
-            "content": "",
             "className": null,
-            "textColor": null,
-            "backgroundColor": null
+            "hasFixedLayout": true,
+            "caption": ""
         },
-        "innerBlocks": []
-    }]
-
+        "renderedHtml": "\n<figure class=\"wp-block-table test\"><table class=\"has-fixed-layout\"><tbody><tr><td>sfadasdfsadfsdf</td><td>fasfasdfsdf</td><td>fsfasdffs</td></tr><tr><td>fsdfsdfsdafsda</td><td>fasdfasdfasdfsadf</td><td>fsadfasdfasdfs</td></tr><tr><td>fsdfasdfsaf</td><td>fsdfsadffsf</td><td>fasdfasdfsdfasd</td></tr><tr><td>fsdfasf</td><td>fsadfafsadf</td><td>fsadfsdafsdf</td></tr><tr><td>fasdfasdfasdf</td><td>fsadfsdaffsdfasdf</td><td>afsdfdsfsdfdsfasf</td></tr></tbody></table></figure>\n",
+    }
+]
 console.log(renderBlocks(data));

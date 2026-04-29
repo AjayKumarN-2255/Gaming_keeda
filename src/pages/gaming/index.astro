@@ -1,0 +1,148 @@
+---
+import Layout from "../../layouts/PostLayout.astro";
+import PostCard from "../../components/common/PostCard.astro";
+import Latest from "../../components/common/Latest.astro";
+const cricketNews = [
+    {
+        title: "Dasun Shanaka Gets One-Year PSL Ban After Joining IPL",
+        date: "April 21, 2026",
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80&w=400",
+        url: "/news/dasun-shanaka-ban",
+    },
+    {
+        title: "IPL 2026: 40th Match, PBKS vs RR Match Prediction & Dream11 Team",
+        date: "April 20, 2026",
+        image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&q=80&w=400",
+        url: "/news/pbks-vs-rr-prediction",
+    },
+    {
+        title: "PCB Appointed Former Captain Sarfaraz Ahmed as Pakistan's Head Coach",
+        date: "April 18, 2026",
+        image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?auto=format&fit=crop&q=80&w=400",
+        url: "/news/sarfaraz-ahmed-coach",
+    },
+    {
+        title: "NZ tour of BAN 2026: 1st T20I, Bangladesh vs New Zealand Preview",
+        date: "April 15, 2026",
+        image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&q=80&w=400",
+        url: "/news/ban-vs-nz-preview",
+    },
+    {
+        title: "BCCI Announces Squad for Champions Trophy: No Major Surprises",
+        date: "April 12, 2026",
+        image: "https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&q=80&w=400",
+        url: "/news/bcci-champions-trophy-squad",
+    },
+    {
+        title: "NZ tour of BAN 2026: 1st T20I, Bangladesh vs New Zealand Preview",
+        date: "April 15, 2026",
+        image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&q=80&w=400",
+        url: "/news/ban-vs-nz-preview",
+    },
+    {
+        title: "BCCI Announces Squad for Champions Trophy: No Major Surprises",
+        date: "April 12, 2026",
+        image: "https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&q=80&w=400",
+        url: "/news/bcci-champions-trophy-squad",
+    },
+    {
+        title: "NZ tour of BAN 2026: 1st T20I, Bangladesh vs New Zealand Preview",
+        date: "April 15, 2026",
+        image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?auto=format&fit=crop&q=80&w=400",
+        url: "/news/ban-vs-nz-preview",
+    },
+    {
+        title: "BCCI Announces Squad for Champions Trophy: No Major Surprises",
+        date: "April 12, 2026",
+        image: "https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&q=80&w=400",
+        url: "/news/bcci-champions-trophy-squad",
+    },
+];
+
+const sidebarNews = [
+    {
+        title: "IPL 2026: 41st Match, MI vs SRH Match Prediction: Playing XI, Head to Head, Pitch Report & Dream11 Prediction",
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=200&q=80",
+        url: "/news/mi-vs-srh-prediction",
+    },
+    {
+        title: "NZ tour of BAN 2026: 2nd T20I, Bangladesh vs New Zealand Match Prediction: Playing XI, Head to Head & Dream11",
+        image: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=200&q=80",
+        url: "/news/ban-vs-nz-2nd-t20",
+    },
+    {
+        title: "PSL 2026: Eliminator 1, MS vs HHK Match Prediction: Playing XI, Head to Head, Pitch Report & Dream11 Team",
+        image: "https://images.unsplash.com/photo-1624526267942-ab0ff8a3e972?w=200&q=80",
+        url: "/news/ms-vs-hhk-psl",
+    },
+    {
+        title: "Dragon’s Breath Blunderbuss in Windrose: Swamp Crypt Location & Boss Guide",
+        image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=200&q=80",
+        url: "/guides/windrose-blunderbuss",
+    },
+    {
+        title: "Windrose Fishing Guide: How to Fish, All Fish Types & Rare Locations",
+        image: "https://images.unsplash.com/photo-1505235687559-28b5f54645b7?w=200&q=80",
+        url: "/guides/windrose-fishing",
+    },
+    {
+        title: "BBL 2026: Sydney Sixers vs Perth Scorchers Preview: Key Players and Match Analysis",
+        image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=200&q=80",
+        url: "/news/sixers-vs-scorchers",
+    },
+    {
+        title: "Elden Ring: Shadow of the Erdtree - How to Defeat the Divine Beast Dancing Lion",
+        image: "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=200&q=80",
+        url: "/guides/elden-ring-boss",
+    },
+    {
+        title: "World Cup 2027 Qualifiers: Full Schedule, Venue Details and Team Squads",
+        image: "https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=200&q=80",
+        url: "/news/wc-qualifiers-schedule",
+    },
+    {
+        title: "Top 10 Best Gaming Laptops for 2026: Reviews and Performance Comparison",
+        image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=200&q=80",
+        url: "/tech/best-gaming-laptops",
+    }
+];
+---
+
+<Layout>
+    <div class="w-full flex flex-col p-6 xl:flex-row gap-4">
+        <div class="flex-1 flex flex-col gap-10">
+            <div class="w-full rounded-lg bg-secondary min-h-52 p-5">
+                page content
+            </div>
+            <div
+                class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+            >
+                {
+                    cricketNews.map((news) => (
+                        <PostCard
+                            title={news.title}
+                            date={news.date}
+                            image={news.image}
+                            url={news.url}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+        <div
+            class="xl:w-[325px] w-full max-h-[1060px] bg-secondary rounded-lg p-[10px]"
+        >
+            <h3 class="font-bold text-highlight">LATEST NEWS</h3>
+            <hr class="border-white border-[1.5px] my-2 font-bold" />
+            {
+                sidebarNews.map((news) => (
+                    <Latest
+                        title={news.title}
+                        image={news.image}
+                        url={news.url}
+                    />
+                ))
+            }
+        </div>
+    </div>
+</Layout>

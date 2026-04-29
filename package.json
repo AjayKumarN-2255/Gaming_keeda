@@ -12,7 +12,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.1.8"
+    "@apollo/client": "^4.1.9",
+    "astro": "^6.1.8",
+    "graphql": "^16.13.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.0",

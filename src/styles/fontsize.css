@@ -1,5 +1,10 @@
 @layer base {
 
+    /* -------- span -------- */
+    span{
+        @apply text-xs;
+    }
+
     /* -------- Paragraph -------- */
     p {
         @apply text-xs;
