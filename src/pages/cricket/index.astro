@@ -1,7 +1,12 @@
 ---
 import Layout from "../../layouts/PostLayout.astro";
+import { fetchArchiveData } from "../../lib/queries/getArchivePosts";
+import { renderBlocks } from "../../lib/renderBlock.js";
 import PostCard from "../../components/common/PostCard.astro";
 import Latest from "../../components/common/Latest.astro";
+
+const archiveData = await fetchArchiveData("cricket");
+
 const cricketNews = [
     {
         title: "Dasun Shanaka Gets One-Year PSL Ban After Joining IPL",
@@ -104,7 +109,7 @@ const sidebarNews = [
         title: "Top 10 Best Gaming Laptops for 2026: Reviews and Performance Comparison",
         image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=200&q=80",
         url: "/tech/best-gaming-laptops",
-    }
+    },
 ];
 ---
 
@@ -112,7 +117,8 @@ const sidebarNews = [
     <div class="w-full flex flex-col p-6 xl:flex-row gap-4">
         <div class="flex-1 flex flex-col gap-10">
             <div class="w-full rounded-lg bg-secondary min-h-52 p-5">
-                page content
+                <h2 class="font-bold text-white mb-2">{archiveData?.title}</h2>
+                <div set:html={renderBlocks(archiveData?.editorBlocks)} />
             </div>
             <div
                 class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"

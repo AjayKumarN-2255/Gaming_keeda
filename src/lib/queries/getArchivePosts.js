@@ -1,48 +1,35 @@
 import { gql } from "@apollo/client";
 import client from "../../appollo/client.js";
-import { PARAGRAPH } from "./blockFragments.js";
 
-const BLOCK_ATTRIBUTES = gql`
-  fragment BlockAttributes on EditorBlock {
-    __typename
-    ... on CoreParagraph {
-      ...ParagraphBlock
-    }
-  }
-
-  ${PARAGRAPH}
-`;
 
 const GET_ARCHIVE = gql`
   query GetArchive($uri: String!) {
     pageBy(uri: $uri) {
       title
 
-      editorBlocks(flat: false) {
+      editorBlocks {
         __typename
-        ...BlockAttributes
 
-        innerBlocks {
-          __typename
-          ...BlockAttributes
-
-          innerBlocks {
-            __typename
-            ...BlockAttributes
+        ... on CoreParagraph {
+          attributes {
+            fontSize
+            content
+            className
+            textColor
+            backgroundColor
           }
         }
       }
     }
   }
-
-  ${BLOCK_ATTRIBUTES}
 `;
+
 
 export const fetchArchiveData = async (slug) => {
   const { data, errors } = await client.query({
     query: GET_ARCHIVE,
     variables: {
-      uri: slug, // no "/" needed anymore
+      uri: slug,
     },
     fetchPolicy: "network-only",
   });

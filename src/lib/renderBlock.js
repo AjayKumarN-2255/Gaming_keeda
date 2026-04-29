@@ -165,20 +165,7 @@ function renderBlock(block) {
 }
 
 
-function renderBlocks(blocks) {
+export function renderBlocks(blocks) {
     if (!blocks) return "";
     return blocks.map(renderBlock).join("");
 }
-
-const data = [
-    {
-        "__typename": "CoreTable",
-        "attributes": {
-            "className": null,
-            "hasFixedLayout": true,
-            "caption": ""
-        },
-        "renderedHtml": "\n<figure class=\"wp-block-table test\"><table class=\"has-fixed-layout\"><tbody><tr><td>sfadasdfsadfsdf</td><td>fasfasdfsdf</td><td>fsfasdffs</td></tr><tr><td>fsdfsdfsdafsda</td><td>fasdfasdfasdfsadf</td><td>fsadfasdfasdfs</td></tr><tr><td>fsdfasdfsaf</td><td>fsdfsadffsf</td><td>fasdfasdfsdfasd</td></tr><tr><td>fsdfasf</td><td>fsadfafsadf</td><td>fsadfsdafsdf</td></tr><tr><td>fasdfasdfasdf</td><td>fsadfsdaffsdfasdf</td><td>afsdfdsfsdfdsfasf</td></tr></tbody></table></figure>\n",
-    }
-]
-console.log(renderBlocks(data));
